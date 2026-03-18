@@ -20,7 +20,8 @@ def main():
         print(f"Side: {args.side}")
         print(f"Type: {args.type}")
         print(f"Quantity: {args.qty}")
-        print(f"Price: {args.price}")
+        if args.price:
+            print(f"Price: {args.price}")
 
         response = placeOrder(
             symbol=args.symbol,
@@ -35,7 +36,7 @@ def main():
         print(f"Order ID: {response.get('orderId','N/A')}")
         print(f"Status: {response.get('status','N/A')}")
         print(f"Executed Quantity: {response.get('executedQty','0')}")
-        print(f"Client Order ID: {response.get('clientOorderId','N/A')}")
+        print(f"Client Order ID: {response.get('clientOrderId','N/A')}")
 
 
         print('\nOrder placed successfully')
